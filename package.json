@@ -6,6 +6,7 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/BiggestManGuy/CaptionCreator2"
+    "url": "git://github.com/BiggestManGuy/CaptionCreator2"
   },
   "engines": {
     "npm": ">=5",
@@ -16,6 +17,8 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "analyze:clean": "rimraf stats.json",
     "preanalyze": "npm run analyze:clean",
     "analyze": "node ./internals/scripts/analyze.js",
@@ -23,6 +26,7 @@
     "npmcheckversion": "node ./internals/scripts/npmcheckversion.js",
     "preinstall": "npm run npmcheckversion",
     "prebuild": "npm run build:clean",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress --hide-modules --display-optimization-bailout",
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress --hide-modules --display-optimization-bailout",
     "build:clean": "rimraf ./build",
     "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=development node server",
@@ -45,6 +49,8 @@
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "prettify": "prettier --write",
+    "serve": "serve dist"
     "prettify": "prettier --write",
     "serve": "serve dist"
   },
@@ -73,6 +79,7 @@
     "@fortawesome/free-solid-svg-icons": "5.10.1",
     "@fortawesome/react-fontawesome": "0.1.4",
     "@simonwep/pickr": "1.7.1",
+    "caniuse-lite": "^1.0.30001743",
     "caniuse-lite": "^1.0.30001743",
     "chalk": "2.4.2",
     "compression": "1.7.4",
@@ -153,6 +160,7 @@
     "eslint-plugin-react-hooks": "1.6.0",
     "eslint-plugin-redux-saga": "1.0.0",
     "file-loader": "3.0.1",
+    "gh-pages": "^6.3.0",
     "gh-pages": "^6.3.0",
     "html-loader": "0.5.5",
     "html-webpack-plugin": "3.2.0",
