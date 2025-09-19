@@ -12,10 +12,11 @@
   <h3 align="center">Caption Creator</h3>
 
   <p align="center">
-    A web app to compose images and text.
+    A web app to compose images and text. Original by: rzpn
+    Fixed Version by BiggestManGuy
     <br />
     <br />
-    <a href="https://captioncreator.dev">Live App</a>
+    <a href="BiggestManGuy.github.io"></a>
   </p>
 </p>
 
